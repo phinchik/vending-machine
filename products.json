@@ -1,0 +1,65 @@
+{
+  "maxStock": 50,
+  "maxChange": 100,
+  "currentChange": 100,
+
+  "products": {
+    "kitkat": {
+      "name": "kitkat",
+      "slot": "1",
+      "price": 1.75,
+      "count": 8
+    },
+    "Ferrero": {
+      "name": "ferrero",
+      "slot": "2",
+      "price": 3.25,
+      "count": 10
+    },
+    "water": {
+      "name": "water",
+      "slot": "5",
+      "price": 1.5,
+      "count": 0
+    },
+    "lays": {
+      "name": "lays",
+      "slot": "6",
+      "price": 1.5,
+      "count": 2
+    },
+    "timtam": {
+      "name": "timtam",
+      "slot": "7",
+      "price": 3.25,
+      "count": 1
+    }
+  },
+  "coins": {
+    "nickel": {
+      "value": 0.05,
+      "count": 40,
+      "max": 50
+    },
+    "dime": {
+      "value": 0.1,
+      "count": 20,
+      "max": 50
+    },
+    "quarter": {
+      "value": 0.25,
+      "count": 20,
+      "max": 50
+    },
+    "loonies": {
+      "value": 1,
+      "count": 20,
+      "max": 50
+    },
+    "toonies": {
+      "value": 2,
+      "count": 20,
+      "max": 50
+    }
+  }
+}
