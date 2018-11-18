@@ -4,10 +4,16 @@ class Machine {
   }
 
   queryName(title) {
-    return { name: this.data.products[title].name };
+    return {
+      name: this.data.products[title].name,
+      count: this.data.products[title].count
+    };
   }
   queryPrice(title) {
-    return { price: this.data.products[title].price };
+    return {
+      name: this.data.products[title].name,
+      price: this.data.products[title].price
+    };
   }
 
   queryInventory() {
@@ -45,61 +51,74 @@ class Machine {
     return total;
   }
 
-  dispenseProductPayment(title, money) {
-    let item = this.data.products[title];
+  negativePayment(title, payment) {
+    let itemName = this.data.products[title].name;
+    let itemPrice = this.data.products[title].price;
+    let productCount = this.data.products[title].count;
+
+    let purchase = {
+      balance: "",
+      item: "",
+      count: ""
+    };
+
+    if (payment < itemPrice) {
+      purchase.balance = payment - itemPrice;
+      purchase.item = itemName;
+      purchase.count = productCount;
+    }
+    return purchase;
+  }
+
+  dispenseProduct(title, payment) {
+    let itemName = this.data.products[title].name;
+    let itemPrice = this.data.products[title].price;
+    let productCount = this.data.products[title].count;
 
     let purchase = {
       change: "",
-      item: ""
+      item: "",
+      count: ""
     };
 
-    if (money === item[title].price) {
-      purchase.change = "no change needed";
-      purchase.item = item[title].name;
-
-      return purchase;
+    if (payment === itemPrice || payment > itemPrice) {
+      purchase.change = payment - itemPrice;
+      purchase.item = itemName;
+      purchase.count = productCount -= 1;
     }
+    return purchase;
   }
 
-  // dispenseInventory(title) {
-  //   const invCoins = Object.entries(this.data.coins);
-  //   const invProducts = Object.entries(this.data.products);
-  //   const payment = invCoins[4][1].value;
-  //   console.log("invProducts", invProducts);
+  diapenseCoins(amount) {
+    var coins = [100, 50, 20, 10, 5, 2, 1, 0.25, 0.1, 0.05];
+    var result = {};
 
-  //   const newInventory = invProducts[0].map(product => {
-  //     console.log("product >>>", product.price, payment);
-  //     if (product.name === title && product.price < payment) {
-  //       product.count -= 1;
-  //     } else {
-  //       return "insuficient fund";
-  //     }
-  //     return product;
+    for (var i = 0; amount > 0 && i < coins.length; i++) {
+      var value = coins[i];
+
+      if (value <= amount) {
+        result[value] = Math.floor(amount / value);
+        amount -= value * result[value];
+      }
+    }
+
+    return result;
+  }
+
+  queryCoinCount(title) {
+    return {
+      count: this.data.coins[title].count,
+      value: this.data.coins[title].value
+    };
+  }
+
+  // refillEmptySlots(slot) {
+  //   const inventory = Object.entries(this.data.products);
+  //   console.log("this>>>>>", inventory);
+
+  //   inventory.filter(item => {
+  //     item[1].count === 0 && item[1].slot === slot;
   //   });
-
-  //   console.log("@@@@@@@", newInventory);
-
-  // const product = invProducts.filter(product => {
-  //   return product[0] === title;
-  // });
-
-  // const productCount = product[0][1].count;
-
-  // console.log('invProducts ')
-  // let productCount = invProducts[0][1].count;
-  // console.log("count", productCount[0].find(title));
-
-  // let payment = invCoins[4][1].value;
-  // invProducts.forEach(item => {
-  //   console.log("itemmmmmm", item[1].price, payment);
-
-  //   if (item[1].price < payment) {
-  //     return productCount - 1;
-  //   } else {
-  //     return productCount;
-  //   }
-  // });
-  // return (productCount = { count: this.data.products[title].count });
   // }
 }
 
