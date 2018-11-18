@@ -1,4 +1,5 @@
 ## Project Title
+
 Vending Machine App for Testing Driven Development
 
 ## Description and Objective
@@ -45,7 +46,7 @@ Query Coin Count
 
 - should return the coin count
 
-![Uploading Screen Shot 2018-11-18 at 2.29.01 PM.png…]()
+![screen shot 2018-11-18 at 2 29 01 pm](https://user-images.githubusercontent.com/38735598/48679342-b8c42a80-eb43-11e8-9b5f-28edb5d423fa.png)
 
 ##Installing
 
