@@ -45,7 +45,7 @@ Vending Machine App for Testing Driven Development
 
 - should return the coin count
 
-![terminal](images/terminal.png)
+![Uploading Screen Shot 2018-11-18 at 2.29.01 PM.png…]()
 
 ##Installing
 
