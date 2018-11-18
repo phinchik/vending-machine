@@ -53,10 +53,10 @@ Query Coin Count
 - cd to vending-machine
 - npm install
 
-##Run Jest Tests
+## Run Jest Tests
 
 - npm test
 
-##Author
+## Author
 
 - Jenny Gutierrez
