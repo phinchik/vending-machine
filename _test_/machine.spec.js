@@ -112,15 +112,4 @@ describe("Machine", () => {
       });
     });
   });
-
-  // describe("RefillEmptySlot", () => {
-  //   it("should refill empty slot", () => {
-  //     expect(VendingMachine.refillEmptySlots(3)).toEqual("hersheys", {
-  //       name: name,
-  //       slot: 2,
-  //       price: 2.25,
-  //       count: 10
-  //     });
-  //   });
-  // });
 });

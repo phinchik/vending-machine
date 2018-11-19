@@ -111,15 +111,6 @@ class Machine {
       value: this.data.coins[title].value
     };
   }
-
-  // refillEmptySlots(slot) {
-  //   const inventory = Object.entries(this.data.products);
-  //   console.log("this>>>>>", inventory);
-
-  //   inventory.filter(item => {
-  //     item[1].count === 0 && item[1].slot === slot;
-  //   });
-  // }
 }
 
 module.exports = Machine;
